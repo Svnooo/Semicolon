@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('soal', function (Blueprint $table) {
             $table->id();
+            $table->string('isiSoal', 255); 
             $table->timestamps();
         });
     }

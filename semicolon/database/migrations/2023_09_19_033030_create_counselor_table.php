@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('counselor', function (Blueprint $table) {
             $table->id();
+            $table->string('username', 255);
+            $table->string('password', 255); // Anda perlu enkripsi password sebelum menyimpannya
+            $table->string('email', 255)->unique(); // Email harus unik
+            $table->string('foto', 255)->nullable(); // Kolom foto boleh kosong
             $table->timestamps();
         });
     }
