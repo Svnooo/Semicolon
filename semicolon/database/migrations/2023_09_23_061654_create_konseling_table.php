@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('konseling', function (Blueprint $table) {
             $table->id(); // Id sebagai primary key
-            $table->unsignedBigInteger('client_id'); // Kolom untuk foreign key ke tabel 'client'
-            $table->unsignedBigInteger('counselor_id'); // Kolom untuk foreign key ke tabel 'counselor'
+            $table->unsignedBigInteger('id_client'); // Kolom untuk foreign key ke tabel 'client'
+            $table->unsignedBigInteger('id_counselor'); // Kolom untuk foreign key ke tabel 'counselor'
             $table->date('hari'); // Kolom untuk tanggal hari konseling
             $table->dateTime('tanggal_jam'); // Kolom untuk tanggal dan jam konseling
             
             // Definisi foreign key constraints
-            $table->foreign('client_id')->references('id')->on('users');
-            $table->foreign('counselor_id')->references('id')->on('counselor');
+            $table->foreign('id_client')->references('id')->on('users');
+            $table->foreign('id_counselor')->references('id')->on('counselor');
             
             $table->timestamps();
         });

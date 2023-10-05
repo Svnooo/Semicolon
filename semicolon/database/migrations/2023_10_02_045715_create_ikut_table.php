@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('counselor', function (Blueprint $table) {
+        Schema::create('ikut', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 255);
-            $table->string('password', 255); // Anda perlu enkripsi password sebelum menyimpannya
-            $table->string('email', 255)->unique(); // Email harus unik
-            $table->binary('foto')->nullable(); // Kolom foto boleh kosong
+            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_tes')->constrained('tes');
+            $table->datetime('tanggal');
+            $table->string('skor');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('counselor');
+        Schema::dropIfExists('ikut');
     }
 };

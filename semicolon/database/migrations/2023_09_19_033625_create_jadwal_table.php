@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_counselor')->constrained('counselor');
             $table->timestamps();
         });
     }
