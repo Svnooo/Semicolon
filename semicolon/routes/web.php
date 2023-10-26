@@ -35,4 +35,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('admin',function(){
+    return Inertia::render('Dashboard');
+})->middleware(['auth','verified','role:admin']);
+
+Route::get('user',function(){
+    return Inertia::render('Dashboard');
+})->middleware(['auth','verified','role:user']);
+
+Route::get('counselor',function(){
+    return Inertia::render('Dashboard');
+})->middleware(['auth','verified','role:counselor']);
+
 require __DIR__.'/auth.php';

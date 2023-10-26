@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('id_tes')->constrained('tes');
             $table->string('isiSoal', 255); 
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
