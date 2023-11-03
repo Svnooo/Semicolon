@@ -17,8 +17,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    // return Inertia::render('Login');
-    return redirect('/login');
+    return Inertia::render('Login');
+//    return redirect('/login');
 });
 
 
