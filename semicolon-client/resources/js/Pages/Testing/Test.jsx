@@ -1,31 +1,27 @@
 import { Link } from '@inertiajs/react';
 import React from 'react';
+import GuestLayout2 from '@/Layouts/GuestLayout2';
 
 export default function Test() {
     return (
-            <div className="min-h-screen bg-gray-200">
-                <div className="bg-white text-blue p-4">
-                    <div className="flex items-center justify-between">
-                        <div className="text-2xl font-bold">
-                            <span className="text-3xl black">Semi</span>
-                            <span className="text-3xl text-green-500">Colon</span>
+        <GuestLayout2>
+            <div className="p-4 h-w-screen">
+                <div className="mx-auto flex space-x-40 h-full">
+                    <Link href="/test/mbti">
+                        <div className="bg-green-200 p-8 cursor-pointer h-full">
+                            <p className="font-bold">MBTI Test</p>
                         </div>
-                        <ul className="flex space-x-6">
-                            <li>
-                                <Link href="/test/mbti">MBTI Test</Link>
-                            </li>
-                            <li>
-                                <Link href="/test/stress">Stress Test</Link>
-                            </li>
-                        </ul>
-                    </div>
+                    </Link>
+                    <Link href="/test/stress">
+                        <div className="bg-yellow-200 p-8 cursor-pointer h-full">
+                            <p className="font-bold">Stress Test</p>
+                        </div>
+                    </Link>
                 </div>
-                <div className="absolute top-20 left-1/3 transform -translate-x-1/2 text-center">
-                    <p className="text-3xl font-bold italic">Have You Find Reasons to Smile Today ^_^</p>
-                </div>
-                <div className="flex items-center justify-center">
-                    {/* Your content for the Mental Test menu goes here */}
-                </div>
-            </div>    
+            </div>
+            <div className="flex items-center justify-center flex-1">
+                {/* Your content for the Mental Test menu goes here */}
+            </div>
+        </GuestLayout2>
     );
 }
