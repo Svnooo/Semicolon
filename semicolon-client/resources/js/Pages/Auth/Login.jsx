@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
 import Checkbox from '@/Components/Checkbox';
-import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
+import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { useEffect } from 'react';
+
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,10 +28,15 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
+        
         <GuestLayout>
-            <Head title="Log in" />
+        <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            <div className="text-center">
+                <span className="text-black font-bold text-3xl">Semi</span>
+                <span className="text-green-500 font-bold text-3xl">Colon</span>
+            </div>
+
 
             <form onSubmit={submit}>
                 <div>
@@ -73,23 +79,25 @@ export default function Login({ status, canResetPassword }) {
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
                         />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex flex-col items-center mt-8">
+                <PrimaryButton className="bg-blue-500 px-20 py-3" disabled={processing}>
+                    Log in
+                </PrimaryButton>
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="mt-10 text-blue-500 hover:underline rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Forgot your password?
+                            Lupa Kata Sandi?
                         </Link>
                     )}
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
-                    </PrimaryButton>
+                    <p className="mt-1 text-sm text-gray-600">
+                        Tidak punya akun? <Link href={route('register')} className="text-blue-500 hover:underline">Buat Akun</Link>
+                    </p>
                 </div>
             </form>
         </GuestLayout>
