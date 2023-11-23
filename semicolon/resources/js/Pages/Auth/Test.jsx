@@ -27,4 +27,4 @@ const MbtiTest = () => {
   return <div>Tes MBTI</div>;
 };
 
-export { MentalTestPage, StressTest, MbtiTest };
+export default{ MentalTestPage, StressTest, MbtiTest };
