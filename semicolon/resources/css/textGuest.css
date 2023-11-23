@@ -1,0 +1,14 @@
+/* CSS */
+.custom-text {
+    position: absolute;
+    top: 20%; /* Sesuaikan dengan posisi vertikal yang Anda inginkan (misalnya, 10px dari atas) */
+    left: 10%; /* Sesuaikan dengan posisi horizontal yang Anda inginkan */
+    transform: translateX(-50%); /* Untuk menempatkan teks di tengah secara horizontal */
+    text-align: center;
+    font-size: 1.25rem; /* Sesuaikan dengan ukuran font yang Anda inginkan */
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* Gunakan kelas custom-text pada elemen HTML Anda */
